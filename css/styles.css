@@ -17,6 +17,12 @@ header h1 {
   padding: 1em;
 }
 
+.search-field {
+  position: fixed;
+  top: 0px;
+  left: calc(100vw - 200px);
+}
+
 .modal {
   display: flex;
   position: absolute;

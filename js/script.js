@@ -104,7 +104,10 @@
     fetch('https://randomuser.me/api/?results=12&nat=us')
     .then(response => response.json())
     .then(response => $.each(response.results, (i, user) => append(user)))
+    .then(() => search.new('.container'))
     .catch(error => alert(error.message));
+
+    search.init('header', 'search-field', 'Search for employee');
 
   }
 
