@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #35434e;
+}
+
+header h1 {
+  font-weight: normal;
+  padding: 1em;
+}
+
+.modal {
+  display: flex;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal .content {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+.modal-wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.thumbnail img,
+.modal .content img {
+  border-radius: 50%;
+}
+
+.modal .content img {
+  width: 200px;
+}
+
+.modal .content {
+  box-shadow: 1px 1px 10px black;
+  line-height: 2em;
+}
+
+.employee {
+  transition: transform .3s cubic-bezier(.37,-0.45,.77,1.56);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 2px solid lightgrey;
+  border-radius: 10px;
+  margin: 1%;
+  padding: 1em;
+  overflow: hidden;
+  cursor: pointer;
+
+}
+
+.employee:hover {
+  transform: scale(1.05);
+}
+
+.info,
+.more {
+  padding-left: 1em;
+  color: darkgrey;
+}
+
+.more {
+  padding-top: 2em;
+  border-top: 2px solid lightgrey;
+  margin-top: 2em;
+}
+
+.name,
+.city,
+.address
+ {
+  text-transform: capitalize;
+}
+
+.name {
+  font-weight: normal;
+  margin: 5px 0;
+  color: #35434e;
+}
+
+.prev {
+  float: left;
+}
+
+.next,
+.close {
+  float: right;
+}
+
+.prev::before {
+  content: "<";
+}
+
+.next::before {
+  content: ">";
+}
+
+.close::before {
+  content: "X";
+}
+
+.prev,
+.next,
+.close {
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
+  padding-top: 10px;
+  cursor: pointer;
+  transition: transform .3s ease-in;
+}
+
+.prev:hover,
+.next:hover,
+.close:hover {
+  transform: scale(1.2);
+}
+
+.close {
+  font-size: 1.5em;
+}
+
+@media only screen and (min-width: 769px) {
+
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .employee {
+    flex-basis: 45%;
+  }
+  .modal .content {
+    border-radius: 10px;
+    margin: 10em auto;
+    width: 50%;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .employee {
+    flex-basis: 31%;
+  }
+}
