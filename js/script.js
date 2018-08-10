@@ -2,6 +2,7 @@
 
   let $container;
   let $body;
+  let $searchField;
   let index = 0;
 
   // contains the users
@@ -52,11 +53,11 @@
         modal(data[--index]);
     });
 
-    $('.search-field').hide();
+    $searchField.hide();
 
     // handles click when close button is clicked
     $modal.on('click', 'div.close', () => {
-      $('.search-field').show();
+      $searchField.show();
       $modal.remove();
     });
 
@@ -101,8 +102,11 @@
   // loads the data and calls append to add the users to the page
   function load() {
 
+    search.init('header', 'search-field', 'Search for employee');
+
     $container = $('.container');
     $body = $('body');
+    $searchField = $('.search-field');
 
     $container.on('click', 'div.employee', show);
 
@@ -111,8 +115,6 @@
     .then(response => $.each(response.results, (i, user) => append(user)))
     .then(() => search.new('.container'))
     .catch(error => alert(error.message));
-
-    search.init('header', 'search-field', 'Search for employee');
 
   }
 
