@@ -52,8 +52,13 @@
         modal(data[--index]);
     });
 
+    $('.search-field').hide();
+
     // handles click when close button is clicked
-    $modal.on('click', 'div.close', () => $modal.remove());
+    $modal.on('click', 'div.close', () => {
+      $('.search-field').show();
+      $modal.remove();
+    });
 
     // append the modal to the body
     $body.append($modal);

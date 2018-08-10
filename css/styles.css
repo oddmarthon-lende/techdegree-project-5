@@ -20,7 +20,16 @@ header h1 {
 .search-field {
   position: fixed;
   top: 0px;
-  left: calc(100vw - 200px);
+  left: calc(100vw - 250px);
+  background-color: rgba(255,255,255, .8);
+  border: 1px solid lightgrey;
+  padding: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 1px 1px 10px black;
+  z-index: 100;
 }
 
 .modal {
@@ -68,11 +77,11 @@ header h1 {
 }
 
 .employee {
-  transition: transform .3s cubic-bezier(.37,-0.45,.77,1.56);
+  transition: transform .3s cubic-bezier(.37,-0.45,.77,1.56), box-shadow .3s ease-in;
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: 2px solid lightgrey;
+  border: 1px solid lightgrey;
   border-radius: 10px;
   margin: 1%;
   padding: 1em;
@@ -83,6 +92,7 @@ header h1 {
 
 .employee:hover {
   transform: scale(1.05);
+  box-shadow: 1px 1px 10px black;
 }
 
 .info,
